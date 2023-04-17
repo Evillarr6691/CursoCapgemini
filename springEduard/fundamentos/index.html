@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
+    <main class="container-fluid">
     <h1 class="bg-danger"><b><i>Adiós</b> mundo</i></h1>
     
     <div>
@@ -17,7 +18,7 @@
 
         <output>0</output>
     </div>
-
+    </main>
     <script>
         (function(){
             let result = document.querySelector('output');
@@ -26,6 +27,10 @@
                 result.textContent = +document.querySelector('#op1').value + 
                 +document.querySelector('#op2').value;
             });
+            btn.addEventListener('click', ev => {
+                console.log(`Boton pulsado`);
+            });
+            //btn.removeEventListener('click', )
         })();
     </script>
 
