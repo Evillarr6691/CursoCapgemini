@@ -9,7 +9,29 @@
 <body>
     <h1 class="bg-danger"><b><i>Adiós</b> mundo</i></h1>
     
-    <script src="demo.js"></script>
+    <div>
+        <input type="number" id="op1" value="0">
+        +
+        <input type="number" id="op2" value="0">
+        <input type="button" value="=">
+
+        <output>0</output>
+    </div>
+
+    <script>
+        (function(){
+            let result = document.querySelector('output');
+            let btn = document.querySelector('input[type=button]');
+            btn.addEventListener('click', ev => {
+                result.textContent = +document.querySelector('#op1').value + 
+                +document.querySelector('#op2').value;
+            });
+        })();
+    </script>
+
+
+
+    <!-- <script src="demo.js"></script>
     <script src="otro.js"></script>
     <script>
         // let x = "En la pagina"
@@ -31,6 +53,6 @@
         console.log(nombre, calc(2,2))
         display();
 
-   </script>
+   </script> -->
 </body>
 </html>
