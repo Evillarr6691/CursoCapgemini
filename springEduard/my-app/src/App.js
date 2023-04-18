@@ -1,7 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 
-function App() {
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  render () {
+    return (
+      <div>
+        <Home />
+        <DemoJSX />
+        </div >
+    )
+  }
+}
+
+class DemoJSX extends Component {
+  render () {
+    return (
+      <div>DemoJSX</div>
+    )
+  }
+}
+
+function Home() {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +41,5 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
-
-export default App;
