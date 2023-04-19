@@ -1,6 +1,6 @@
 import Big from "big.js";
 
-export default function operacion(num1, num2, operador) {
+export default function operar(num1, num2, operador) {
   const uno = Big(num1 || "0");
   const dos = Big(num2 || (operador === "/" || operador === "*" ? "1" : 0));
 
