@@ -5,9 +5,11 @@ import './App.css';
 
 import React, { Component } from 'react'
 import { Card, Contador } from './componentes';
-import { ErrorBoundary } from './comunes';
+import { ErrorBoundary } from './biblioteca/comunes';
 import Calculadora from './ejercicios/calculadora';
 import Muro from './ejercicios/muro';
+import { PadreFormulario } from './formulario';
+import { ActoresMnt } from './ejercicios/actores';
 
 export default class App extends Component {
   constructor(props) {
@@ -17,12 +19,14 @@ export default class App extends Component {
       main: 0
     }
     this.menu = [
-      { texto: 'muro', url: '/muro', componente: <Muro /> },
+      { texto: 'actores', url: '/actores', componente: <ActoresMnt /> },
       { texto: 'inicio', url: '/', componente: <Home /> },
       { texto: 'demos', url: '/demos', componente: <DemosJSX /> },
       { texto: 'contador', url: '/contador', componente: <Contador init={69} /> },
       { texto: 'calculadora', url: '/calculadora', componente: <Calculadora /> },
+      { texto: 'muro', url: '/muro', componente: <Muro /> },
       { texto: 'ejemplos', url: '/ejemplos', componente: <Ejemplos /> },
+      // { texto: 'fromulario', url: '/fromulario', componente: <PadreFormulario /> },
     ]
   }
 
@@ -31,9 +35,10 @@ export default class App extends Component {
       <>
         <Cabecera menu={this.menu} actual={this.state.main} onSelectMenu={indice => this.setState({ main: indice })} />
         <main className='container-fluid'>
-          <ErrorBoundary>
+           {this.menu[this.state.main].componente}
+          {/* <ErrorBoundary>
             {this.menu[this.state.main].componente}
-          </ErrorBoundary>
+          </ErrorBoundary> */}
         </main>
         <Pie />
       </>
